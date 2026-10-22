@@ -1,0 +1,9 @@
+Package: com.mbucc9000.smsrelay
+Name: SMS Relay
+Version: 1.0.3
+Architecture: iphoneos-arm
+Description: 2FA and login-code texts sent to your main iPhone's number, on this iPhone. A Shortcuts automation on the main iPhone relays code texts here over iMessage. SMS Relay shows each one as a notification from the real sender, copies the code to the clipboard, and hides a second copy of a code that also arrived as an iMessage. Settings > SMS Relay. Setup steps for the main iPhone's Shortcut are on its slopkit page.
+Author: mbucc9000
+Maintainer: mbucc9000
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader

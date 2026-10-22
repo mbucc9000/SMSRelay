@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>entry</key>
+	<dict>
+		<key>cell</key>
+		<string>PSLinkCell</string>
+		<key>icon</key>
+		<string>SMSRelay.png</string>
+		<key>label</key>
+		<string>SMS Relay</string>
+	</dict>
+	<key>title</key>
+	<string>SMS Relay</string>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>2FA and login-code texts sent to your main iPhone's number show up here as notifications from the real sender. Your main iPhone relays only those texts, over iMessage, with a Shortcuts automation (setup below).</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.mbucc9000.smsrelay/prefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mbucc9000.smsrelay</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>When a relayed text has a verification code in it, the code goes on the clipboard and the notification title says Code Copied.</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.mbucc9000.smsrelay/prefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mbucc9000.smsrelay</string>
+			<key>key</key>
+			<string>copyCodes</string>
+			<key>label</key>
+			<string>Copy Codes</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>A code sent as an iMessage already comes here directly. When the same text also arrives relayed within 3 minutes, only the first one alerts.</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.mbucc9000.smsrelay/prefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mbucc9000.smsrelay</string>
+			<key>key</key>
+			<string>hideDuplicates</string>
+			<key>label</key>
+			<string>One Alert per Text</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Setup on the Main iPhone</string>
+			<key>footerText</key>
+			<string>Shortcuts &gt; Automation &gt; New Automation &gt; Message. Message Contains: a single space. Run Immediately, Notify When Run off. Actions: Match Text (the regex on SMS Relay's slopkit page) in the message text; If Matches has any value, Send Message to your own number with the text "[SMS] " + Sender, a new line, then the message text. Mute your own-number chat on the main iPhone. The regex and these steps are on SMS Relay’s slopkit page: mbucc9000.github.io/slopkit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
